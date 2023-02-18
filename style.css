@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2/family=Patrick+Hand&display=swap");
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: "Patrick Hand", cursive;
+}
+
+footer {
+  text-align: center;
+  font-weight: bold;
+  opacity: 0;
+}
+
+#rewa {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+section {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 93vh;
+}
+
+.first {
+  height: 75vh;
+  left: 0;
+}
+
+.white {
+  background-color: white;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.blue {
+  background-color: blueviolet;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  padding: 10px;
+  margin-bottom: 25px;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  background-color: blueviolet;
+}
+
+.contentwrapper {
+  margin-top: 30vh;
+  width: 500px;
+  height: fit-content;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 0px rgb(161, 161, 161);
+}
+
+.rewardwrapper {
+  margin: auto;
+  align-items: center;
+  height: 320px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 0px rgb(161, 161, 161);
+}
+
+#full {
+  width: 280px;
+  border: 0px;
+  padding: 10px;
+  margin: 10px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  color: white;
+  font-size: 2em;
+}
+
+#full:hover {
+  background-color: rgb(184, 108, 255);
+}
+
+#full:hover:active {
+  background-color: rgb(75, 23, 122);
+}
+
+#register {
+  width: 480px;
+  border: 0px;
+  padding: 10px;
+  margin: 10px;
+  background-color: blueviolet;
+  border-radius: 10px;
+  color: white;
+  font-size: 2em;
+  transition: 0.3s;
+}
+
+#register:hover {
+  background-color: rgb(184, 108, 255);
+}
+
+#register:hover:active {
+  background-color: rgb(75, 23, 122);
+}
+
+#usr {
+  width: 100px;
+  margin-left: 30px;
+  padding-right: 10px;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+#username {
+  width: 120px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: blueviolet;
+  margin-bottom: 10px;
+  border: 0px;
+  color: white;
+  transition: 0.5s;
+}
+
+#username:focus {
+  width: 320px;
+}
+
+#brt {
+  width: 100px;
+  margin-left: 30px;
+  padding-right: 19px;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected,
+input:-internal-autofill-previewed {
+  background-color: white !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+#birth {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: blueviolet;
+  border: 0px;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+#life {
+  height: 50%;
+  text-align: center;
+  font-size: 40px;
+  color: blueviolet;
+}
+
+.gamewrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  width: 100%;
+  height: 50%;
+}
+
+.buttonwrapper {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoutButton {
+  display: none;
+}
+
+.startButton {
+  padding: 20px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 40%;
+  font-size: 2em;
+  width: 200px;
+  height: 100px;
+  cursor: pointer;
+  transition: background-color 0.8s;
+}
+
+.startButton:hover {
+  background-color: rgb(35, 0, 66);
+}
+
+.startButton:hover:active {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.box {
+  font-size: 5em;
+  margin: 10px;
+  padding: 15px;
+  border: 5px solid blueviolet;
+  border-radius: 10px;
+}
+
+#navwrapper {
+  visibility: hidden;
+  width: 100%;
+  height: 80px;
+  background-color: blueviolet;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navigation {
+  display: flex;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.nav:hover {
+  background-color: #eaeaea;
+  border-radius: 10px;
+  transition: all ease-in-out 0.25s;
+}
+
+.nav:hover > a {
+  color: #222;
+}
+
+.nav2 {
+  visibility: hidden;
+  list-style-type: none;
+  padding: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.nav2:hover {
+  background-color: #eaeaea;
+  border-radius: 10px;
+  transition: all ease-in-out 0.25s;
+}
+
+.nav2:hover > a {
+  color: #222;
+}
+
+.navlink {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 60px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 75px;
+  height: 75px;
+  background-color: white;
+  color: blueviolet;
+  border-radius: 50%;
+}
+
+#topp {
+  opacity: 0;
+  display: none;
+}
+
+#infop {
+  padding: 0 10px 0 0;
+}
+
+.dropdown {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.dropdown .dropbtn {
+  font-size: 30px;
+  border-color: transparent;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(107, 29, 180);
+  color: white;
+  padding: 5px 5px;
+  font-family: inherit;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color: blueviolet;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#main {
+  opacity: 0;
+}
+
+#start {
+  display: none;
+}
+
+#reward {
+  display: none;
+}

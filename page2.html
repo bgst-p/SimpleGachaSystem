@@ -1,0 +1,214 @@
+<html>
+  <head>
+    <title>Halaman Profile</title>
+    <style type="text/css">
+      body {
+        background-color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 95vh;
+      }
+
+      #split {
+        background-color: blueviolet;
+        box-shadow: 0px 5px 15px 0px rgb(71, 71, 71);
+        border-radius: 20px;
+        width: 900px;
+        height: 500px;
+        display: grid;
+        grid-template-rows: auto auto;
+      }
+
+      .box {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+
+      #id1 {
+        margin-top: 20px;
+        width: 100px;
+      }
+
+      #id2 {
+        text-align: left;
+        width: 330px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+      }
+
+      h3 {
+        margin: 0;
+        margin-top: 30px;
+      }
+
+      h1 {
+        color: white;
+        opacity: 1;
+      }
+
+      a {
+        color: aqua;
+      }
+
+      #back {
+        text-align: center;
+        background-color: white;
+        color: blueviolet;
+        font-size: 50px;
+        font-weight: bold;
+        height: 100px;
+        margin: 50px;
+        border: 0;
+        border-radius: 15px;
+        width: 800;
+        transition: 0.3s;
+      }
+
+      #back:hover {
+        background-color: #230042;
+        color: white;
+      }
+
+      #back:hover:active {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      #frame {
+        margin-left: 100px;
+        width: 210px;
+        height: 280px;
+        border-radius: 15px;
+        position: relative;
+        background: white;
+      }
+      #avatar {
+        position: absolute;
+        bottom: 0;
+        left: 17.5px;
+        width: 175px;
+        height: 125px;
+        background-color: blueviolet;
+        border-top-left-radius: 110px;
+        border-top-right-radius: 110px;
+        border-bottom: 0;
+      }
+
+      #dot {
+        position: absolute;
+        top: 20px;
+        left: 37.5px;
+        height: 130px;
+        width: 130px;
+        background-color: blueviolet;
+        border-radius: 50%;
+      }
+
+      #dot2 {
+        position: absolute;
+        top: 65px;
+        left: 65px;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+      }
+
+      #dot3 {
+        position: absolute;
+        top: 65px;
+        left: 115px;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+      }
+
+      #dot4 {
+        position: absolute;
+        top: 70px;
+        left: 70px;
+        height: 15px;
+        width: 15px;
+        background-color: #230042;
+        border-radius: 50%;
+        transition: left 0.2s;
+      }
+
+      #dot5 {
+        position: absolute;
+        top: 70px;
+        left: 120px;
+        height: 15px;
+        width: 15px;
+        background-color: #230042;
+        border-radius: 50%;
+        transition: left 0.2s;
+      }
+
+      #dot6 {
+        position: absolute;
+        top: 64px;
+        left: 64px;
+        height: 27px;
+        width: 27px;
+        background-color: blueviolet;
+        border-radius: 50%;
+        transition: top 0.08s;
+      }
+
+      #dot7 {
+        position: absolute;
+        top: 64px;
+        left: 114px;
+        height: 27px;
+        width: 27px;
+        background-color: blueviolet;
+        border-radius: 50%;
+        transition: top 0.08s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="split" style="opacity: 0">
+        <div class="box">
+          <div id="id1">
+            <div id="frame">
+              <div id="dot"></div>
+              <div id="dot2"></div>
+              <div id="dot3"></div>
+              <div id="dot4"></div>
+              <div id="dot5"></div>
+              <div id="dot6"></div>
+              <div id="dot7"></div>
+              <div id="avatar"></div>
+            </div>
+          </div>
+          <div id="id2">
+            <h3>Nama:</h3>
+            <h1 id="Nama"></h1>
+            <h3>Tanggal Lahir:</h3>
+            <h1 id="Tanggal Lahir"></h1>
+            <h3>ID Token:</h3>
+            <h1 id="Token ID"></h1>
+          </div>
+        </div>
+        <div>
+          <button onclick="kembali()" id="back">Kembali</button>
+        </div>
+      </div>
+    </div>
+    <script src="page2.js"></script>
+  </body>
+</html>
