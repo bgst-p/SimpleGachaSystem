@@ -12,25 +12,25 @@ const box3 = document.getElementById("box3");
 const rewardImage = document.getElementById("imgReward");
 const nameImage = document.getElementById("imgName");
 const full = document.getElementById("full");
-const idttt = document.getElementById("idttt");
 const idtt = document.getElementById("idtt");
 const idt = document.getElementById("idt");
 const brtvalue = document.getElementById("birth");
 const brtreplace = document.getElementById("birth");
 const mmenu = document.getElementById("mmenu");
+const dd = document.getElementById("dd");
 const navwrapper = document.getElementById("navwrapper");
 const hai = document.getElementById("infop");
 const profile = document.getElementById("profile");
 const topp = document.getElementById("topp");
 const shuffle = document.getElementById("shuffle");
 const foot = document.getElementById("foot");
-const user = sessionStorage.getItem("user");
-const link = sessionStorage.getItem("link");
-const desc = sessionStorage.getItem("desc");
-const token = sessionStorage.getItem("token");
-const lif = sessionStorage.getItem("life");
+const user = localStorage.getItem("user");
+const link = localStorage.getItem("link");
+const desc = localStorage.getItem("desc");
+const token = localStorage.getItem("token");
+const lif = localStorage.getItem("life");
 const liff = parseInt(lif);
-const score = sessionStorage.getItem("score");
+const score = localStorage.getItem("score");
 const skr = parseInt(score);
 
 document.getElementById("lifeuse").innerHTML = lif;
@@ -56,18 +56,18 @@ function reward() {
   fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
     .then((x) => x.json())
     .then((result) => {
-      //set nama hadiah reward
+      //set name reward
       let text = document.createElement("h1");
       text.textContent = result.name + ".img";
       var imn = text.textContent;
-      sessionStorage.setItem("desc", imn);
-      text.style.color = "blueviolet";
+      localStorage.setItem("desc", imn);
+      text.style.color = "rgb(68, 36, 82)";
 
-      //set gambar hadiah
+      //set pic reward
       let img = new Image(300, 200);
       img.src = result.image_link;
       var imj = img.src;
-      sessionStorage.setItem("link", imj);
+      localStorage.setItem("link", imj);
 
       //set element
       rewardImage.appendChild(img);
@@ -78,7 +78,7 @@ function reward() {
 }
 
 function fulll() {
-  const link = sessionStorage.getItem("link");
+  const link = localStorage.getItem("link");
   window.open(link, "_blank");
 }
 
@@ -87,15 +87,15 @@ function winner() {
     box1.textContent == box2.textContent &&
     box1.textContent == box3.textContent
   ) {
-    //skoring
+    //scoring
     var val = parseInt(document.getElementById("skor").value, 10);
     val = isNaN(val) ? skr : val;
     val++;
     document.getElementById("skor").value = val;
-    sessionStorage.setItem("score", val);
-    const skor = sessionStorage.getItem("score");
+    localStorage.setItem("score", val);
+    const skor = localStorage.getItem("score");
     document.getElementById("skor").innerHTML = skor;
-    //skoring
+    //scoring
   }
 }
 
@@ -112,13 +112,13 @@ function start() {
     box3.style.border = z;
   }
 
-  //kesempatan roll decreament from 20 (session storage)
+  //roll decreament from 15 (local storage)
   var value = parseInt(document.getElementById("lifeuse").value, 10);
   value = isNaN(value) ? liff : value;
   value--;
   document.getElementById("lifeuse").value = value;
-  sessionStorage.setItem("life", value);
-  const life = sessionStorage.getItem("life");
+  localStorage.setItem("life", value);
+  const life = localStorage.getItem("life");
   document.getElementById("lifeuse").innerHTML = life;
 
   const rolling = setInterval(function () {
@@ -132,20 +132,20 @@ function start() {
     shuffle.style.display = "block";
     clearInterval(rolling);
     clearInterval(random);
-    box1.style.border = "5px solid blueviolet";
-    box2.style.border = "5px solid blueviolet";
-    box3.style.border = "5px solid blueviolet";
+    box1.style.border = "5px solid wheat";
+    box2.style.border = "5px solid wheat";
+    box3.style.border = "5px solid wheat";
     winner();
     if (life == "0") {
-      //notifikasi kalah
-      alert("Kesempatan Roll Habis..");
+      //lose notification
+      alert("Empty Roll Chance, you could reset the game...");
       shuffle.style.display = "none";
     }
     setTimeout(function () {
-      //notifikasi menang
+      //win notification
       var val = document.getElementById("skor").value;
       if (val == "2") {
-        alert("Selamat, Anda Berhasil..!");
+        alert("Congratulation..!");
         shuffle.style.display = "none";
         reward();
         location.href = "#reward";
@@ -187,8 +187,6 @@ onload = function () {
   }, 2000);
 
   setTimeout(function () {
-    idttt.style.opacity = "0.5";
-    idttt.style.transition = "opacity 1s";
     idtt.style.opacity = "0.5";
     idtt.style.transition = "opacity 1s";
     idt.style.opacity = "0.5";
@@ -220,9 +218,9 @@ onload = function () {
   if (link != null) {
     let text = document.createElement("h1");
     text.textContent = desc;
-    text.style.color = "blueviolet";
+    text.style.color = "rgb(68, 36, 82)";
 
-    //set gambar hadiah
+    //set pic reward
     let img = new Image(300, 200);
     img.src = link;
 
@@ -235,12 +233,12 @@ onload = function () {
 
 function changeclr() {
   if (username.value != "") {
-    username.style.backgroundColor = "white";
-    username.style.color = "black";
+    username.style.backgroundColor = "wheat";
+    username.style.color = "rgb(68, 36, 82)";
     username.style.width = "320px";
   } else {
-    username.style.backgroundColor = "blueviolet";
-    username.style.color = "white";
+    username.style.backgroundColor = "rgb(68, 36, 82)";
+    username.style.color = "wheat";
   }
 }
 
@@ -251,47 +249,54 @@ function dateyes() {
     setTimeout(function () {
       brtvalue.style.opacity = "1";
       brtvalue.style.transition = "opacity 0.2s";
-      brtreplace.style.backgroundColor = "white";
-      brtreplace.style.color = "black";
+      brtreplace.style.backgroundColor = "wheat";
+      brtreplace.style.color = "rgb(68, 36, 82)";
     }, 200);
   } else {
-    brtvalue.style.backgroundColor = "blueviolet";
-    brtvalue.style.color = "white";
+    brtvalue.style.backgroundColor = "rgb(68, 36, 82)";
+    brtvalue.style.color = "wheat";
   }
 }
 
-window.onscroll = function (ev) {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    topp.style.display = "block";
-    setTimeout(function () {
-      topp.style.opacity = "1";
-      topp.style.transition = "opacity 1s";
-    }, 850);
+setInterval(function(){
+  if(scrollY != 0){
+    topp.style.marginBottom = "unset"
+  }else{
+    topp.style.marginBottom = "-100px"
   }
-};
+}, 100)
 
 function directing() {
   location.href = "#start";
 }
 
 function menu() {
-  mmenu.style.visibility = "visible";
-}
-
-function menuo() {
-  mmenu.style.visibility = "hidden";
+  if(dd.innerHTML === '<i class="fa fa-caret-up"></i>'){
+    dd.innerHTML = '<i class="fa fa-caret-down"></i>';
+    mmenu.style.visibility = "hidden";
+  }else{
+    dd.innerHTML = '<i class="fa fa-caret-up"></i>';
+    mmenu.style.visibility = "visible";
+  }
+  
 }
 
 function register() {
   player.username = username.value;
   player.birth = brtvalue.value;
   if (player.username == "") {
-    alert("Isikan nama lengkap...!");
+    alert("Fill Full Name...!");
   } else if (player.birth == "") {
-    alert("Atur tanggal lahir...!");
+    alert("Fill Birth Date...!");
   } else {
     player.register;
   }
+}
+
+function reset(){
+  localStorage.setItem("life", 15);
+  localStorage.setItem("score", 0);
+  location.reload();
 }
 
 function logout() {

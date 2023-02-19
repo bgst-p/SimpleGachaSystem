@@ -14,9 +14,11 @@ body {
   font-family: "Patrick Hand", cursive;
 }
 
-footer {
+.footer {
   text-align: center;
   font-weight: bold;
+  margin-top: 30px;
+  color: wheat;
   opacity: 0;
 }
 
@@ -31,7 +33,7 @@ footer {
 
 h1 {
   text-align: center;
-  color: white;
+  color: wheat;
 }
 
 section {
@@ -39,12 +41,13 @@ section {
 }
 
 .container {
-  display: flex;
+  margin: auto;
+  padding-top: 30vh;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: rgb(24, 13, 29);
   width: 100%;
-  height: 93vh;
+  min-height: 100vh;
 }
 
 .first {
@@ -52,14 +55,13 @@ section {
   left: 0;
 }
 
-.white {
-  background-color: white;
+.wheat {
+  background-color: wheat;
   display: grid;
   grid-template-rows: auto auto;
 }
 
 .blue {
-  background-color: blueviolet;
   height: 100vh;
 }
 
@@ -68,27 +70,27 @@ section {
   font-size: 2em;
   padding: 10px;
   margin-bottom: 25px;
-  color: white;
+  color: wheat;
   border-radius: 10px 10px 0px 0px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
 }
 
 .contentwrapper {
-  margin-top: 30vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
   width: 500px;
   height: fit-content;
-  background-color: white;
+  background-color: wheat;
   border-radius: 15px;
-  box-shadow: 0px 5px 15px 0px rgb(161, 161, 161);
 }
 
 .rewardwrapper {
   margin: auto;
   align-items: center;
   height: 320px;
-  background-color: white;
+  background-color: wheat;
   border-radius: 15px;
-  box-shadow: 0px 5px 15px 0px rgb(161, 161, 161);
 }
 
 #full {
@@ -96,9 +98,9 @@ section {
   border: 0px;
   padding: 10px;
   margin: 10px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
   border-radius: 10px;
-  color: white;
+  color: wheat;
   font-size: 2em;
 }
 
@@ -115,10 +117,11 @@ section {
   border: 0px;
   padding: 10px;
   margin: 10px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
   border-radius: 10px;
-  color: white;
+  color: wheat;
   font-size: 2em;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -135,17 +138,17 @@ section {
   margin-left: 30px;
   padding-right: 10px;
   font-weight: bold;
-  color: blueviolet;
+  color: rgb(68, 36, 82);
 }
 
 #username {
   width: 120px;
   border-radius: 5px;
   padding: 5px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
   margin-bottom: 10px;
   border: 0px;
-  color: white;
+  color: wheat;
   transition: 0.5s;
 }
 
@@ -158,7 +161,7 @@ section {
   margin-left: 30px;
   padding-right: 19px;
   font-weight: bold;
-  color: blueviolet;
+  color: rgb(68, 36, 82);
 }
 
 input:-webkit-autofill,
@@ -167,20 +170,20 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 input:-internal-autofill-selected,
 input:-internal-autofill-previewed {
-  background-color: white !important;
-  box-shadow: 0 0 0 30px white inset !important;
+  background-color: wheat !important;
+  box-shadow: 0 0 0 30px wheat inset !important;
 }
 
 #birth {
   border-radius: 5px;
   padding: 5px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
   border: 0px;
-  color: white;
+  color: wheat;
 }
 
 ::placeholder {
-  color: white;
+  color: wheat;
   opacity: 0.5;
   font-style: italic;
 }
@@ -189,7 +192,7 @@ input:-internal-autofill-previewed {
   height: 50%;
   text-align: center;
   font-size: 40px;
-  color: blueviolet;
+  color: wheat;
 }
 
 .gamewrapper {
@@ -216,14 +219,14 @@ input:-internal-autofill-previewed {
 .startButton {
   padding: 20px;
   border: none;
-  background-color: blueviolet;
-  color: white;
+  background-color: rgb(68, 36, 82);
+  color: wheat;
   border-radius: 40%;
   font-size: 2em;
   width: 200px;
   height: 100px;
   cursor: pointer;
-  transition: background-color 0.8s;
+  transition: 0.8s;
 }
 
 .startButton:hover {
@@ -239,70 +242,25 @@ input:-internal-autofill-previewed {
   font-size: 5em;
   margin: 10px;
   padding: 15px;
-  border: 5px solid blueviolet;
+  border: 5px solid wheat;
   border-radius: 10px;
 }
 
 #navwrapper {
   visibility: hidden;
   width: 100%;
-  height: 80px;
-  background-color: blueviolet;
+  background-color: rgb(68, 36, 82);
   position: fixed;
   top: 0;
-  left: 0;
 }
 
 .navigation {
-  display: flex;
+  margin: auto;
+  justify-content:center;
+  width: 1080px;
   font-weight: bold;
-  font-size: 30px;
-  color: white;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-}
-
-.nav {
-  list-style-type: none;
-  padding: 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.nav:hover {
-  background-color: #eaeaea;
-  border-radius: 10px;
-  transition: all ease-in-out 0.25s;
-}
-
-.nav:hover > a {
-  color: #222;
-}
-
-.nav2 {
-  visibility: hidden;
-  list-style-type: none;
-  padding: 20px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.nav2:hover {
-  background-color: #eaeaea;
-  border-radius: 10px;
-  transition: all ease-in-out 0.25s;
-}
-
-.nav2:hover > a {
-  color: #222;
-}
-
-.navlink {
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 25px;
+  color: wheat;
 }
 
 .top {
@@ -317,22 +275,41 @@ input:-internal-autofill-previewed {
   right: 20px;
   width: 75px;
   height: 75px;
-  background-color: white;
-  color: blueviolet;
+  background-color: wheat;
+  color: rgb(68, 36, 82);
   border-radius: 50%;
+  transition: 0.5s;
 }
 
 #topp {
-  opacity: 0;
-  display: none;
+  margin-bottom: -100px;
 }
 
 #infop {
-  padding: 0 10px 0 0;
+  padding: 20px 10px 0 0;
+  float: left;
+}
+
+#reset {
+  float: right;
+  font-size: 20px;
+  padding: 10px;
+  background-color: wheat;
+  color: rgb(68, 36, 82);
+  border-radius: 20px;
+  margin-top: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#reset:hover{
+  background-color: #230042;
+  color: wheat;
 }
 
 .dropdown {
-  overflow: hidden;
+  width: fit-content;
+  float: left;
   padding: 10px;
 }
 
@@ -341,31 +318,32 @@ input:-internal-autofill-previewed {
   border-color: transparent;
   font-weight: bold;
   border-radius: 5px;
-  background-color: rgb(107, 29, 180);
-  color: white;
+  background-color: rgb(68, 36, 82);
+  color: wheat;
   padding: 5px 5px;
   font-family: inherit;
+  cursor: pointer;
   margin: 0;
   transition: 0.3s;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: white;
-  color: blueviolet;
+  background-color: wheat;
+  color: rgb(68, 36, 82);
 }
 
 .dropdown-content {
   visibility: hidden;
   position: absolute;
   border-radius: 10px;
-  background-color: #f0f0f0;
+  background-color: wheat;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: rgb(68, 36, 82);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -386,9 +364,21 @@ input:-internal-autofill-previewed {
 }
 
 #start {
+  margin-top: -100px;
   display: none;
 }
 
 #reward {
   display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .navigation {
+    width: 100%;
+  }
+
+  #reset{
+    margin-right: 10px;
+  }
 }

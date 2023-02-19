@@ -1,9 +1,10 @@
 <html>
   <head>
-    <title>Halaman Profile</title>
+    <title>Profile Page</title>
     <style type="text/css">
       body {
-        background-color: white;
+        background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(92, 0, 104));
+        background-repeat: no-repeat;
         font-family: Arial, Helvetica, sans-serif;
       }
 
@@ -16,8 +17,7 @@
       }
 
       #split {
-        background-color: blueviolet;
-        box-shadow: 0px 5px 15px 0px rgb(71, 71, 71);
+        background-color: rgb(68, 36, 82);
         border-radius: 20px;
         width: 900px;
         height: 500px;
@@ -46,12 +46,13 @@
       }
 
       h3 {
+        color: rgb(167, 151, 121);
         margin: 0;
         margin-top: 30px;
       }
 
       h1 {
-        color: white;
+        color: wheat;
         opacity: 1;
       }
 
@@ -61,21 +62,22 @@
 
       #back {
         text-align: center;
-        background-color: white;
-        color: blueviolet;
+        background-color: wheat;
+        color: rgb(68, 36, 82);
         font-size: 50px;
         font-weight: bold;
         height: 100px;
         margin: 50px;
         border: 0;
         border-radius: 15px;
+        cursor: pointer;
         width: 800;
         transition: 0.3s;
       }
 
       #back:hover {
         background-color: #230042;
-        color: white;
+        color: wheat;
       }
 
       #back:hover:active {
@@ -89,7 +91,7 @@
         height: 280px;
         border-radius: 15px;
         position: relative;
-        background: white;
+        background: wheat;
       }
       #avatar {
         position: absolute;
@@ -97,7 +99,7 @@
         left: 17.5px;
         width: 175px;
         height: 125px;
-        background-color: blueviolet;
+        background-color: rgb(68, 36, 82);
         border-top-left-radius: 110px;
         border-top-right-radius: 110px;
         border-bottom: 0;
@@ -109,7 +111,7 @@
         left: 37.5px;
         height: 130px;
         width: 130px;
-        background-color: blueviolet;
+        background-color: rgb(68, 36, 82);
         border-radius: 50%;
       }
 
@@ -119,7 +121,7 @@
         left: 65px;
         height: 25px;
         width: 25px;
-        background-color: white;
+        background-color: wheat;
         border-radius: 50%;
       }
 
@@ -129,7 +131,7 @@
         left: 115px;
         height: 25px;
         width: 25px;
-        background-color: white;
+        background-color: wheat;
         border-radius: 50%;
       }
 
@@ -161,7 +163,7 @@
         left: 64px;
         height: 27px;
         width: 27px;
-        background-color: blueviolet;
+        background-color: rgb(68, 36, 82);
         border-radius: 50%;
         transition: top 0.08s;
       }
@@ -172,7 +174,7 @@
         left: 114px;
         height: 27px;
         width: 27px;
-        background-color: blueviolet;
+        background-color: rgb(68, 36, 82);
         border-radius: 50%;
         transition: top 0.08s;
       }
@@ -196,16 +198,16 @@
             </div>
           </div>
           <div id="id2">
-            <h3>Nama:</h3>
+            <h3>Full Name:</h3>
             <h1 id="Nama"></h1>
-            <h3>Tanggal Lahir:</h3>
+            <h3>Birth Date:</h3>
             <h1 id="Tanggal Lahir"></h1>
             <h3>ID Token:</h3>
             <h1 id="Token ID"></h1>
           </div>
         </div>
         <div>
-          <button onclick="kembali()" id="back">Kembali</button>
+          <button onclick="kembali()" id="back">Back</button>
         </div>
       </div>
     </div>
