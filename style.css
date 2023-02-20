@@ -47,7 +47,7 @@ section {
   align-items: center;
   background-color: rgb(24, 13, 29);
   width: 100%;
-  min-height: 100vh;
+  height: fit-content;
 }
 
 .first {
@@ -62,7 +62,7 @@ section {
 }
 
 .blue {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title {
@@ -87,10 +87,14 @@ section {
 
 .rewardwrapper {
   margin: auto;
+  justify-content: center;
   align-items: center;
-  height: 320px;
+  width: fit-content;
+  height: fit-content;
   background-color: wheat;
+  padding: 10px;
   border-radius: 15px;
+  margin-bottom: 50px;
 }
 
 #full {
@@ -369,6 +373,10 @@ input:-internal-autofill-previewed {
 }
 
 #reward {
+  display: none;
+}
+
+#infopic{
   display: none;
 }
 

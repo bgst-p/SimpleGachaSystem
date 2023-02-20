@@ -9,8 +9,7 @@ const main = document.getElementById("main");
 const box1 = document.getElementById("box1");
 const box2 = document.getElementById("box2");
 const box3 = document.getElementById("box3");
-const rewardImage = document.getElementById("imgReward");
-const nameImage = document.getElementById("imgName");
+const infopic = document.getElementById("infopic");
 const full = document.getElementById("full");
 const idtt = document.getElementById("idtt");
 const idt = document.getElementById("idt");
@@ -53,28 +52,41 @@ function dice() {
 }
 
 function reward() {
-  fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
-    .then((x) => x.json())
-    .then((result) => {
-      //set name reward
-      let text = document.createElement("h1");
-      text.textContent = result.name + ".img";
-      var imn = text.textContent;
-      localStorage.setItem("desc", imn);
-      text.style.color = "rgb(68, 36, 82)";
+  infopic.style.display = "block"
+  let IDKey = 'THIS IS UNSPLASH API PUBLIC KEY, TO HAVE IT YOU NEED TO START FREE API PROGRAM';
+  let source = `https://api.unsplash.com/photos/random/?client_id=${IDKey}`;
 
-      //set pic reward
-      let img = new Image(300, 200);
-      img.src = result.image_link;
-      var imj = img.src;
-      localStorage.setItem("link", imj);
+  let imgLink = document.querySelector('#imgLink');
+  let imgReward = document.querySelector('#imgReward');
+  let imgName = document.querySelector('#imgName');
 
-      //set element
-      rewardImage.appendChild(img);
-      nameImage.appendChild(text);
-      full.style.display = "block";
-      full.style.transition = "display 0.5s";
-    });
+  fetch(source)
+  .then((x) => x.json())
+  .then((result) => {
+    //set name
+    imgName.innerText = result.user.name;
+    imgName.setAttribute("href", result.user.portfolio_url);
+
+    var imn = imgName.textContent;
+    localStorage.setItem("desc", imn);
+    imgName.style.color = "rgb(68, 36, 82)";
+
+    //set pic reward
+    imgReward.src = result.urls.regular;
+
+    var imj = imgReward.src;
+    localStorage.setItem("link", imj);
+
+    //set link
+    imgLink.setAttribute("href", result.links.html);
+
+    //set additional
+    full.style.display = "block";
+    full.style.transition = "0.5s";
+  })
+  .catch(function(error){
+    console.log("Error: "+error);
+  })
 }
 
 function fulll() {
@@ -296,6 +308,8 @@ function register() {
 function reset(){
   localStorage.setItem("life", 15);
   localStorage.setItem("score", 0);
+  localStorage.removeItem("link");
+  localStorage.removeItem("desc");
   location.reload();
 }
 
