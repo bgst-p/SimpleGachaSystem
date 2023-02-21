@@ -52,7 +52,7 @@ function dice() {
 
 function reward() {
   infopic.style.display = "block"
-  let IDKey = 'THIS IS UNSPLASH API PUBLIC KEY, TO HAVE IT YOU NEED TO START FREE API PROGRAM';
+  let IDKey = 'THIS IS UNSPLASH API PUBLIC ACCESS KEY, TO HAVE IT YOU NEED TO START FREE API PROGRAM';
   let source = `https://api.unsplash.com/photos/random/?client_id=${IDKey}`;
 
   let imgLink = document.querySelector('#imgLink');
@@ -86,6 +86,10 @@ function reward() {
   .catch(function(error){
     console.log("Error: "+error);
     document.getElementById("imgReward").src="assets/why.jpg";
+    
+    //set additional
+    full.style.display = "block";
+    full.style.transition = "0.5s";
   })
 }
 
