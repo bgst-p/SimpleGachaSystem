@@ -20,8 +20,8 @@ const dd = document.getElementById("dd");
 const navwrapper = document.getElementById("navwrapper");
 const hai = document.getElementById("infop");
 const profile = document.getElementById("profile");
+const topp = document.getElementById("topp");
 const shuffle = document.getElementById("shuffle");
-const foot = document.getElementById("foot");
 const user = localStorage.getItem("user");
 const link = localStorage.getItem("link");
 const desc = localStorage.getItem("desc");
@@ -85,6 +85,7 @@ function reward() {
   })
   .catch(function(error){
     console.log("Error: "+error);
+    document.getElementById("imgReward").src="assets/why.jpg";
   })
 }
 
@@ -188,11 +189,6 @@ onload = function () {
   }, 500);
 
   setTimeout(function () {
-    foot.style.opacity = "0.5";
-    foot.style.transition = "opacity 1s";
-  }, 1000);
-
-  setTimeout(function () {
     profile.style.opacity = "1";
     profile.style.transition = "opacity 1s";
   }, 2000);
@@ -209,8 +205,12 @@ onload = function () {
     startSection.style.display = "block";
     rewardSection.style.display = "block";
     navwrapper.style.visibility = "visible";
-    profile.innerHTML = user;
     idtt.innerHTML = token;
+    if(user.length > 12){
+      profile.innerHTML = user.slice(0, 10)+"...";
+    }else{
+      profile.innerHTML = user;
+    }
   } else {
     homeSection.style.display = "block";
     startSection.style.display = "none";
@@ -246,7 +246,7 @@ function changeclr() {
   if (username.value != "") {
     username.style.backgroundColor = "wheat";
     username.style.color = "rgb(68, 36, 82)";
-    username.style.width = "320px";
+    username.style.width = "70%";
   } else {
     username.style.backgroundColor = "rgb(68, 36, 82)";
     username.style.color = "wheat";
@@ -276,6 +276,10 @@ setInterval(function(){
     topp.style.marginBottom = "-100px"
   }
 }, 100)
+
+function directing() {
+  location.href = "#start";
+}
 
 function menu() {
   if(dd.innerHTML === '<i class="fa fa-caret-up"></i>'){

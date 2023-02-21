@@ -32,25 +32,27 @@
       <div id="reset" onclick="reset()">Reset</div>
     </ul>
   </div>
-  <div style="background-color: rgb(24, 13, 29); min-width: fit-content;">
+  <div style="background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(92, 0, 104)); background-repeat: no-repeat;">
     <section id="home">
       <div class="container first">
         <div style="opacity: 0;" class="contentwrapper" id="registerF">
           <div id="registerForm">
             <div class="title" id="title">Fill your information</div>
             <div id="info1">
-              <label id="usr" for="usr">Full Name</label><span>:</span>
+              <label id="usr" for="usr">Full Name</label>
               <input onchange="changeclr()" type="text" placeholder="Isi nama disini" id="username" />
               <br />
             </div>
             <div id="info2">
-              <label id="brt" for="brt">Birth Date</label><span>:</span>
+              <label id="brt" for="brt">Birth Date</label>
               <input onchange="dateyes()" type="Date" id="birth" /><br /><br />
             </div>
             <button onclick="register()" id="register">Play!</button>
           </div>
         </div>
-        <div class="footer" id="foot"> &#169; Bagas Satria Pambudi 2022</div>
+        <a href="https://bgst-p.github.io/" class="foot" style="text-decoration: none;">
+          <div class="footer" id="foot"> &#169; Bagas Satria Pambudi 2022 </div>
+        </a>
       </div>
     </section>
     <section id="start">
@@ -83,6 +85,7 @@
         </div>
       </div>
     </section>
+    <div class="top" id="topp" onclick="directing()"><i class="fa fa-arrow-up"></i></div>
   </div>
   <script src="module/Player.js"></script>
   <script src="init.js"></script>
