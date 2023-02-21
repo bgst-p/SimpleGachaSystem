@@ -1,4 +1,5 @@
-// declaring element
+// declaring element______________________________________________________
+
 const username = document.getElementById("username");
 const logoutForm = document.getElementById("logoutForm");
 const registerF = document.getElementById("registerF");
@@ -25,6 +26,8 @@ const shuffle = document.getElementById("shuffle");
 const user = localStorage.getItem("user");
 const link = localStorage.getItem("link");
 const desc = localStorage.getItem("desc");
+const crtsy = localStorage.getItem("crtsy");
+const desclink = localStorage.getItem("desclink");
 const token = localStorage.getItem("token");
 const lif = localStorage.getItem("life");
 const liff = parseInt(lif);
@@ -41,6 +44,12 @@ box1.textContent = default_option[0];
 box2.textContent = default_option[1];
 box3.textContent = default_option[2];
 
+let imgLink = document.querySelector('#imgLink');
+let imgReward = document.querySelector('#imgReward');
+let imgName = document.querySelector('#imgName');
+
+//________________________________________________________________________
+
 function dice() {
   let gacha = [];
   for (let i = 0; i < default_option.length; i++) {
@@ -51,33 +60,33 @@ function dice() {
 }
 
 function reward() {
-  infopic.style.display = "block"
-  let IDKey = 'THIS IS UNSPLASH API PUBLIC ACCESS KEY, TO HAVE IT YOU NEED TO START FREE API PROGRAM';
-  let source = `https://api.unsplash.com/photos/random/?client_id=${IDKey}`;
+  infopic.style.display = "block";
 
-  let imgLink = document.querySelector('#imgLink');
-  let imgReward = document.querySelector('#imgReward');
-  let imgName = document.querySelector('#imgName');
+  let IDKey = 'THIS IS UNSPLASH API PUBLIC ACCESS KEY, TO HAVE IT YOU NEED TO START FREE API PROGRAM (FREE)';
+  let source = `https://api.unsplash.com/photos/random/?client_id=${IDKey}`;
 
   fetch(source)
   .then((x) => x.json())
   .then((result) => {
-    //set name
-    imgName.innerText = result.user.name;
-    imgName.setAttribute("href", result.user.portfolio_url);
 
-    var imn = imgName.textContent;
-    localStorage.setItem("desc", imn);
-    imgName.style.color = "rgb(68, 36, 82)";
+    //set link
+    var courtesy = result.links.html;
+    imgLink.setAttribute("href", courtesy);
+    localStorage.setItem("crtsy", courtesy);
 
     //set pic reward
     imgReward.src = result.urls.regular;
-
     var imj = imgReward.src;
     localStorage.setItem("link", imj);
 
-    //set link
-    imgLink.setAttribute("href", result.links.html);
+    //set name
+    imgName.innerText = result.user.name;
+    var imn = imgName.textContent;
+    localStorage.setItem("desc", imn);
+
+    //set url name
+    imgName.setAttribute("href", result.user.portfolio_url);
+    localStorage.setItem("desclink", result.user.portfolio_url);
 
     //set additional
     full.style.display = "block";
@@ -85,8 +94,11 @@ function reward() {
   })
   .catch(function(error){
     console.log("Error: "+error);
-    document.getElementById("imgReward").src="assets/why.jpg";
-    
+
+    imgReward.src = "assets/why.jpg";
+    var imj = imgReward.src;
+    localStorage.setItem("link", imj);
+
     //set additional
     full.style.display = "block";
     full.style.transition = "0.5s";
@@ -161,16 +173,31 @@ function start() {
       //win notification
       var val = document.getElementById("skor").value;
       if (val == "2") {
-        alert("Congratulation..!");
         shuffle.style.display = "none";
         reward();
         location.href = "#reward";
+        setTimeout(function(){
+          alert("Congratulation..!");
+        }, 700)
       }
     }, 100);
   }, 2000);
 }
 
 onload = function () {
+
+  if(link === null){
+    full.style.display = "none";
+  }else{
+    infopic.style.display = "block";
+    imgName.innerText = desc;
+    imgReward.src = link;
+    imgName.setAttribute("href", desclink);
+    imgLink.setAttribute("href", crtsy);
+    full.style.display = "block";
+    full.style.transition = "0.5s";
+  }
+
   window.setInterval(function () {
     var t = shuffle;
     var z = "#" + ((Math.random() * 0xffffff) << 0).toString(16);
@@ -228,21 +255,6 @@ onload = function () {
 
   if (score == "2") {
     shuffle.style.display = "none";
-  }
-
-  if (link != null) {
-    let text = document.createElement("h1");
-    text.textContent = desc;
-    text.style.color = "rgb(68, 36, 82)";
-
-    //set pic reward
-    let img = new Image(300, 200);
-    img.src = link;
-
-    //set element
-    rewardImage.appendChild(img);
-    nameImage.appendChild(text);
-    full.style.display = "block";
   }
 };
 
@@ -313,6 +325,8 @@ function reset(){
   localStorage.setItem("score", 0);
   localStorage.removeItem("link");
   localStorage.removeItem("desc");
+  localStorage.removeItem("crtsy");
+  localStorage.removeItem("desclink");
   location.reload();
 }
 
