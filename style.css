@@ -386,6 +386,10 @@ input:-internal-autofill-previewed {
 
 @media only screen and (max-width: 767px) {
 
+  .first{
+    padding-top: 25vh;
+  }
+
   .box {
     font-size: 3.5em;
     margin: 1vw;
