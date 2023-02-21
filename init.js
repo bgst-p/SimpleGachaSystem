@@ -20,7 +20,6 @@ const dd = document.getElementById("dd");
 const navwrapper = document.getElementById("navwrapper");
 const hai = document.getElementById("infop");
 const profile = document.getElementById("profile");
-const topp = document.getElementById("topp");
 const shuffle = document.getElementById("shuffle");
 const foot = document.getElementById("foot");
 const user = localStorage.getItem("user");
@@ -277,10 +276,6 @@ setInterval(function(){
     topp.style.marginBottom = "-100px"
   }
 }, 100)
-
-function directing() {
-  location.href = "#start";
-}
 
 function menu() {
   if(dd.innerHTML === '<i class="fa fa-caret-up"></i>'){
