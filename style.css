@@ -54,21 +54,6 @@ section {
   height: fit-content;
 }
 
-.first {
-  height: 75vh;
-  left: 0;
-}
-
-.wheat {
-  background-color: wheat;
-  display: grid;
-  grid-template-rows: auto auto;
-}
-
-.blue {
-  min-height: 100vh;
-}
-
 .title {
   text-align: center;
   font-size: 2em;
@@ -431,6 +416,14 @@ input:-internal-autofill-previewed {
   #birth {
     width: 120px;
     margin-left: 30px;
+  }
+
+}
+
+@media only screen and (max-height: 500px){
+  
+  #rewa {
+    margin-top: 100px;
   }
 
 }
