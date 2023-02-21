@@ -412,13 +412,11 @@ input:-internal-autofill-previewed {
   #info1 {
     display: grid;
     grid-template-rows: auto auto;
-    grid-auto-flow: dense;
   }
 
   #info2 {
     display: grid;
     grid-template-rows: auto auto;
-    grid-auto-flow: dense;
   }
 
   #username {
